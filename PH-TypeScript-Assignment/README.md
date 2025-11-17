@@ -18,11 +18,7 @@ interface User {
   age: number;
 }
 
-type UserType = {
-  name: string;
-  age: number;
-}
-
+type userID = number | string;
 ```
 
 ----------
@@ -34,7 +30,7 @@ type UserType = {
 
 ```
 type Status = 'loading' | 'success' | 'error';
-type Id = string | number; //ইন্টারসেকশন করা হয়েছ
+type Id = string | number; //union করা হয়েছ
 
 interface Profile {
   username: string;
@@ -67,9 +63,9 @@ type ক্লাসে implements করা যায় না।
 
 # কখন কোনটা ব্যবহার করা উচিত
 
-TypeScript-এ interface ব্যবহার করা উচিত যখন আপনি object-এর গঠন নির্ধারণ করছেন এবং চান যে তা future-এ extend বা merge করা যাবে। যেমন ক্লাস implement বা declaration marging এর ক্ষেত্রে।
+TypeScript-এ interface ব্যবহার করা উচিত যখন আপনি object-এর গঠন নির্ধারণ করছেন এবং আপনি চান যে তা future-এ extend বা merge করা যাবে। যেমন ক্লাস implement বা declaration marging এর ক্ষেত্রে।
 
-যখন আপনাকে union, intersection, tuple, বা primitive টাইপ define করতে হয়, অথবা function signature বা utility টাইপ তৈরি করতে হয় তখন আবার type বেশি উপযুক্ত। বড় স্কেলেবেল সিস্টেমে interface এর extensibility সুবিধা দেয়, আর type দিয়ে complex টাইপ composition সহজ হয়। প্রোজেক্টে দুটোই একসাথে ইউজ কেস ভেদে যথোপযুক্ত ভাবে ব্যবহার করলে কোড আরও readable ও maintainable হয়।
+অন্যদিকে, যখন আপনাকে union, intersection, tuple, বা primitive টাইপ define করতে হয়, অথবা function signature বা utility টাইপ তৈরি করতে হয় তখন আবার type বেশি উপযুক্ত। বড় স্কেলেবেল সিস্টেমে interface এর extensibility সুবিধা দেয়, আর type দিয়ে complex টাইপ composition সহজ হয়। প্রোজেক্টে দুটোই একসাথে ইউজ কেস ভেদে যথোপযুক্ত ভাবে ব্যবহার করলে কোড আরও readable ও maintainable হয়।
 
 
 
