@@ -13,7 +13,7 @@ const formatValue = (
   }
 };
 
-const getLength = (value: string | any[]): number => {
+const getLength = (value: string | unknown[]): number => {
   if (typeof value === "string") {
     return value.length;
   } else if (Array.isArray(value)) {
@@ -24,12 +24,12 @@ const getLength = (value: string | any[]): number => {
 class Person {
   name: string;
   age: number;
-  constructor(name: string, age: number) {
+  constructor(name:string, age:number) {
     this.name = name;
     this.age = age;
   }
-  getDetails(): string {
-    return `Name: ${this.name}, Age: ${this.age}`;
+  getDetails():string {
+    return `'Name: ${this.name}, Age: ${this.age}'`
   }
 }
 
